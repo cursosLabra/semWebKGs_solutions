@@ -1,0 +1,19 @@
+@prefix ex: <http://www.example.org/> .
+@prefix schema: <https://schema.org/> .
+
+ex:Observation1 a schema:Observation ;
+    schema:observedNode pato:Temperature ;
+    schema:measuredValue 36.0e0 ;
+    schema:location ex:OviedoCity .
+
+ex:OviedoCity a schema:City .
+
+ex:Observation2 a schema:Observation ;
+    schema:observedNode pato:Temperature ;
+    schema:measuredValue 36.0e0 ;
+    schema:object ex:OviedoPerson .
+
+ex:OviedoPerson a voc:SoccerPlayer .
+
+# https://rdfshape.weso.es/link/16382563481
+

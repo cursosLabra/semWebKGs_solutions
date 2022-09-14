@@ -1,0 +1,17 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+select ?p ?t ?average (?t - ?average as ?dev) where {
+ ?x :player ?p ;
+    :hasTemperature ?t .   
+ {
+  select (avg(?t) as ?average) where {
+   ?x :player ?p ;
+      :hasTemperature ?t .
+   FILTER (isNumeric(?t))
+  } 
+ }
+}

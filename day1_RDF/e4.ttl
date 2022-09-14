@@ -1,0 +1,25 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+:table3 :hasMeasurement :mt31, :mt32, :mt33, :mt34 ;
+        dcterm:creator :michaelBlur .
+        
+:mt31 :player :jensStage ;
+    :wikidataItem wd:R5235126 ;
+    :team :FCCopenhagen ;
+    :hasTemperature 37.0 .
+:mt32 :player :zeca ;
+    :wikidataItem wd:Q3810416 ;
+    :team :FCCopenhagen ;
+    :hasTemperature "Approx thirty six" .
+:mt33 :player :pepBiel ;
+    :wikidataItem wd:Q47478674 ;
+    :team :ManchesterUnitedFC, :FCCopenhagen ;
+    :hasTemperature 38.2 .
+:mt34 :player :kevinDiks ;
+    :wikidataItem wd:Q17602824 ;
+    :team :FCCopenhagen ;
+    :hasTemperature 370.0 .

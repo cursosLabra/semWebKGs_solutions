@@ -1,0 +1,259 @@
+@prefix ex: <http://www.example.org/> .
+@prefix voc: <http://www.example.org/voc/> .
+@prefix ncit: <http://purl.obolibrary.org/obo/NCIT> .
+@prefix ro: <http://purl.obolibrary.org/obo/RO> .
+@prefix iao: <http://purl.obolibrary.org/obo/IAO> .
+@prefix pato: <http://purl.obolibrary.org/obo/PATO> .
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO> .
+@prefix af-m: <http://purl.allotrope.org/ontologies/material#> .
+@prefix af-p: <http://purl.allotrope.org/ontologies/process#> .
+@prefix af-r: <http://purl.allotrope.org/ontologies/result#> .
+@prefix af-e: <http://purl.allotrope.org/ontologies/equipment#> .
+@prefix af-x: <http://purl.allotrope.org/ontologies/property#> .
+@prefix af-rl: <http://purl.allotrope.org/ontologies/role#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix schema: <https://schema.org/> .
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# ROW 1
+
+ex:TemperatureMeasurement1 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <bryan.oviedo@mail.com> , ex:Thermometer, _:Official1  ;
+    af-x:hasDataOutput ex:Result1 ;
+    af-x:targets _:BodyTemperature1 .
+
+ex:Result1 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 36.0e0 ;
+    qudt:unit unit:DEG_C .
+
+<bryan.oviedo@mail.com> a af-m:Person ;
+    foaf:name "Bryan Oviedo" ;
+    ro:hasRole _:SoccerPlayer, _:Patient1 .
+
+wiki:Q325997 a schema:Dataset ;
+    iao:isAbout <bryan.oviedo@mail.com> .
+
+_:BodyTemperature1 a ncit:BodyTemperature .
+
+_:Patient1 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement1 .
+
+# ROW 2
+
+ex:TemperatureMeasurement2 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <jonas.wind@mail.com> , ex:Thermometer, _:Official2  ;
+    af-x:hasDataOutput ex:Result2 ;
+    af-x:targets _:BodyTemperature2 .
+
+ex:Result2 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 35.5e0 ;
+    qudt:unit unit:DEG_C .
+
+<jonas.wind@mail.com> a af-m:Person ;
+    foaf:name "Jonas Wind" ;
+    ro:hasRole _:SoccerPlayer, _:Patient2 .
+
+wiki:Q52084298 a schema:Dataset ;
+    iao:isAbout <jonas.wind@mail.com> .
+
+_:BodyTemperature2 a ncit:BodyTemperature .
+
+_:Patient2 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement2 .
+
+# ROW 3
+
+ex:TemperatureMeasurement3 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <bruno.fernandes@mail.com> , ex:Thermometer, _:Official3  ;
+    af-x:hasDataOutput ex:Result3 ;
+    af-x:targets _:BodyTemperature3 .
+
+ex:Result3 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 36.1e0 ;
+    qudt:unit unit:DEG_C .
+
+<bruno.fernandes@mail.com> a af-m:Person ;
+    foaf:name "Bruno Fernandes" ;
+    ro:hasRole _:SoccerPlayer, _:Patient3 .
+
+wiki:Q4979316 a schema:Dataset ;
+    iao:isAbout <bruno.fernandes@mail.com> .
+
+_:BodyTemperature3 a ncit:BodyTemperature .
+
+_:Patient3 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement3 .
+
+# ROW 4
+
+ex:TemperatureMeasurement4 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <juan.mata@mail.com> , ex:Thermometer, _:Official4  ;
+    af-x:hasDataOutput ex:Result4 ;
+    af-x:targets _:BodyTemperature4 .
+
+ex:Result4 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 37.0e0 ;
+    qudt:unit unit:DEG_C .
+
+<juan.mata@mail.com> a af-m:Person ;
+    foaf:name "Juan Mata" ;
+    ro:hasRole _:SoccerPlayer, _:Patient4 .
+
+wiki:Q168740 a schema:Dataset ;
+    iao:isAbout <juan.mata@mail.com> .
+
+_:BodyTemperature4 a ncit:BodyTemperature .
+
+_:Patient4 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement4 .
+
+# Exercise 3 ROW 1
+
+ex:TemperatureMeasurement5 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <bruno.fernandes@mail.com> , ex:Thermometer, <robert.klauss@mail.com>  ;
+    af-x:hasDataOutput ex:Result5 ;
+    af-x:targets _:BodyTemperature5 .
+
+ex:Result5 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 36.0e0 ;
+    qudt:unit unit:DEG_C .
+
+<bruno.fernandes@mail.com> ro:hasRole _:Patient5 .
+
+_:BodyTemperature5 a ncit:BodyTemperature .
+
+_:Patient5 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement5 .
+
+ex:TemperatureMeasurement6 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <bruno.fernandes@mail.com> , ex:Thermometer, <robert.klauss@mail.com>  ;
+    af-x:hasDataOutput ex:Result6 ;
+    af-x:targets _:BodyTemperature6 .
+
+ex:Result6 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 37.5e0 ;
+    qudt:unit unit:DEG_C .
+
+<bruno.fernandes@mail.com> ro:hasRole _:Patient6 .
+
+_:BodyTemperature6 a ncit:BodyTemperature .
+
+_:Patient6 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement6 .
+
+# Exercise 3 ROW 2
+
+ex:TemperatureMeasurement7 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <cristiano.ronaldo@mail.com> , ex:Thermometer, <robert.klauss@mail.com>  ;
+    af-x:hasDataOutput ex:Result7 ;
+    af-x:targets _:BodyTemperature7 .
+
+ex:Result7 a af-r:TemperatureMeasurementResult .
+
+<cristiano.ronaldo@mail.com> a af-m:Person ;
+    foaf:name "Cristiano Ronaldo" ;
+    ro:hasRole _:SoccerPlayer, _:Patient7 .
+
+wiki:Q11571 a schema:Dataset ;
+    iao:isAbout <cristiano.ronaldo@mail.com> .
+
+_:BodyTemperature7 a ncit:BodyTemperature .
+
+_:Patient7 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement7 .
+
+# Exercise 3 ROW 3
+
+ex:TemperatureMeasurement8 a af-p:TemperatureMeasurement ;
+    ro:hasParticipant <jonas.wind@mail.com> , ex:Thermometer, <robert.klauss@mail.com>  ;
+    af-x:hasDataOutput ex:Result8 ;
+    af-x:targets _:BodyTemperature8 .
+
+ex:Result8 a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 39.0e0 ;
+    qudt:unit unit:DEG_C .
+
+<jonas.wind@mail.com> ro:hasRole _:Patient8 .
+
+_:BodyTemperature8 a ncit:BodyTemperature .
+
+_:Patient8 a af-rl:Patient ;
+    bfo:realizedIn ex:TemperatureMeasurement8 .
+
+# Further Context
+
+<miltos.soares@mail.com> a af-m:Person ;
+    foaf:name "Miltos Soares" ;
+    ro:hasRole _:Reporter .
+
+ex:ReportingTemperature a af-p:Reporting ;
+    ro:hasParticipant <miltos.soares@mail.com> .
+
+_:StartTime a af-r:StartTime ;
+    af-x:hasValue "2020-08-11T20:15:00Z"^^xsd:dateTime ;
+    af-x:describes ex:ReportingTemperature .
+
+_:Reporter a af-rl:Reporter ;
+    bfo:realizedIn ex:ReportingTemperature .
+
+_:Official1 a voc:Official ;
+    ro:hasRole [
+        a bfo:Role ;
+        bfo:realizedIn ex:TemperatureMeasurement1 ;
+    ] .
+
+_:Official2 a voc:Official ;
+    ro:hasRole [
+        a bfo:Role ;
+        bfo:realizedIn ex:TemperatureMeasurement2 ;
+    ] .
+
+_:Official3 a voc:Official ;
+    ro:hasRole [
+        a bfo:Role ;
+        bfo:realizedIn ex:TemperatureMeasurement3 ;
+    ] .
+
+_:Official4 a voc:Official ;
+    ro:hasRole [
+        a bfo:Role ;
+        bfo:realizedIn ex:TemperatureMeasurement4 ;
+    ] .
+
+ex:Thermometer a af-e:Thermometer .
+
+_:SoccerPlayer a voc:SoccerPlayer .
+
+voc:SoccerPlayer rdfs:subClassOf bfo:Role .
+
+ex:TeamCopenhagen a voc:SoccerTeam ;
+    rdfs:label "F. C. Copenhagen" ;
+    ro:hasMember <bryan.oviedo@mail.com> , <jonas.wind@mail.com> .
+
+ex:TeamManchester a voc:SoccerTeam ;
+    rdfs:label "Manchester United F. C." ;
+    ro:hasMember <bruno.fernandes@mail.com> , <juan.mata@mail.com> .
+
+voc:SoccerTeam rdfs:subClassOf schema:SportsTeam .
+
+schema:SportsTeam rdfs:subClassOf af-m:Group .
+
+# Further context from exercise 3
+
+<robert.klauss@mail.com> a af-m:Person ;
+    foaf:name "Robert Klauss" ;
+    ro:hasRole _:Reporter2 .
+
+ex:ReportingTemperature2 a af-p:Reporting ;
+    ro:hasParticipant <robert.klauss@mail.com> .
+
+_:Reporter2 a af-rl:Reporter ;
+    bfo:realizedIn ex:ReportingTemperature2 .
+
+_:Official2 owl:sameAs <robert.klauss@mail.com> .

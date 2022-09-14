@@ -1,0 +1,14 @@
+prefix ex: <http://www.example.org/> 
+prefix voc: <http://www.example.org/voc/> 
+prefix schema: <https://schema.org/> 
+prefix wiki: <https://www.wikidata.org/wiki/> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<Observation> {
+  a [ schema:Observation ] ;
+  voc:footballPlayer xsd:string ;
+  voc:wikidataitem   /[Q][0-9]*/ ;
+  voc:team . ;
+  schema:measuredProperty [ voc:Temperature ] ;
+  schema:measuredValue xsd:double AND MAXINCLUSIVE 45
+}

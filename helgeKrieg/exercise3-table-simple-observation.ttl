@@ -1,0 +1,59 @@
+@prefix ex: <http://www.example.org/> .
+@prefix voc: <http://www.example.org/voc/> .
+@prefix schema: <https://schema.org/> .
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+
+ex:Observation1 a schema:Observation ;
+    voc:footballPlayer "Bryan Oviedo" ;
+    voc:wikidataitem wiki:Q325997 ;
+    voc:team ex:TeamCopenhagen ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 36.0e0 .
+
+ex:Observation2 a schema:Observation ;
+    voc:footballPlayer "Jonas Wind" ;
+    voc:wikidataitem wiki:Q52084298 ;
+    voc:team ex:TeamCopenhagen ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 35.5e0 .
+
+ex:Observation3 a schema:Observation ;
+    voc:footballPlayer "Bruno Fernandes" ;
+    voc:wikidataitem wiki:Q4979316 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 36.1e0 .
+
+ex:Observation4 a schema:Observation ;
+    voc:footballPlayer "Juan Mata" ;
+    voc:wikidataitem wiki:Q168740 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 37.0e0 .
+
+ex:Observation5 a schema:Observation ;
+    voc:footballPlayer "Bruno Fernandes" ;
+    voc:wikidataitem wiki:Q4979316 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 36.0e0 .
+
+ex:Observation6 a schema:Observation ;
+    voc:footballPlayer "Bruno Fernandes" ;
+    voc:wikidataitem wiki:Q4979316 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 37.5e0 .
+
+ex:Observation7 a schema:Observation ;
+    voc:footballPlayer "Cristiano Ronaldo" ;
+    voc:wikidataitem wiki:Q11571 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature .
+
+ex:Observation8 a schema:Observation ;
+    voc:footballPlayer "Jonas Wind" ;
+    voc:wikidataitem wiki:Q52084298 ;
+    voc:team ex:TeamCopenhagen ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 39.0e0 .

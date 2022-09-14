@@ -1,0 +1,111 @@
+# temperatue above 36
+prefix ex: <http://www.example.org/>
+prefix voc: <http://www.example.org/voc/>
+prefix schema: <https://schema.org/>
+prefix wiki: <https://www.wikidata.org/wiki/>
+
+Select distinct ?player ?value where {
+	?observation voc:footballPlayer ?player ;
+		schema:measuredValue ?value .
+	Filter(?value>36.0e0)
+}
+
+
+# average temperature
+prefix ex: <http://www.example.org/>
+prefix voc: <http://www.example.org/voc/>
+prefix schema: <https://schema.org/>
+prefix wiki: <https://www.wikidata.org/wiki/>
+
+Select distinct (avg(?value) as ?avg) where {
+	?observation voc:footballPlayer ?player ;
+		schema:measuredValue ?value .
+}
+
+
+# standard deviation, sparql 1.1 has no sqrt
+prefix ex: <http://www.example.org/>
+prefix voc: <http://www.example.org/voc/>
+prefix schema: <https://schema.org/>
+prefix wiki: <https://www.wikidata.org/wiki/>
+
+Select (SUM((?value - ?avg)*(?value - ?avg))/(COUNT(?value)-1) as ?ssquared) where {
+	?observation schema:measuredValue ?value .
+	{
+		Select (avg(?value) as ?avg) where {
+			?observation voc:footballPlayer ?player ;
+				schema:measuredValue ?value .
+		}
+	}
+}
+
+# reported values
+prefix ex: <http://www.example.org/>
+prefix voc: <http://www.example.org/voc/>
+prefix ncit: <http://purl.obolibrary.org/obo/NCIT>
+prefix ro: <http://purl.obolibrary.org/obo/RO>
+prefix iao: <http://purl.obolibrary.org/obo/IAO>
+prefix pato: <http://purl.obolibrary.org/obo/PATO>
+prefix bfo: <http://purl.obolibrary.org/obo/BFO>
+prefix af-m: <http://purl.allotrope.org/ontologies/material#>
+prefix af-p: <http://purl.allotrope.org/ontologies/process#>
+prefix af-r: <http://purl.allotrope.org/ontologies/result#>
+prefix af-e: <http://purl.allotrope.org/ontologies/equipment#>
+prefix af-x: <http://purl.allotrope.org/ontologies/property#>
+prefix af-rl: <http://purl.allotrope.org/ontologies/role#>
+prefix qudt: <http://qudt.org/schema/qudt/>
+prefix unit: <http://qudt.org/vocab/unit/>
+prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+prefix schema: <https://schema.org/>
+prefix wiki: <https://www.wikidata.org/wiki/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+select distinct ?recording ?value ?official where {
+	?recording a af-p:TemperatureMeasurement ;
+		ro:hasParticipant ?official ;
+		af-x:hasDataOutput ?result .
+
+	optional {
+		?result qudt:numericValue ?value .
+	}
+
+	{
+		?official a af-m:Person ;
+			ro:hasRole [ a af-rl:Reporter ] .
+	} union {
+		?official a voc:Official ;
+	}
+}
+order by ?recording
+
+
+
+# Query Wikidata
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix ex: <http://www.example.org/>
+prefix voc: <http://www.example.org/voc/>
+prefix schema: <https://schema.org/>
+prefix wiki: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+Select distinct ?player ?value ?wiki ?place_of_birth ?country_name where {
+	?observation voc:footballPlayer ?player ;
+		schema:measuredValue ?value ;
+		voc:wikidataitem ?wiki .
+
+	optional {
+		Service <https://query.wikidata.org/sparql> {
+			?wiki wdt:P19 ?place .
+			?place rdfs:label ?place_of_birth .
+			FILTER(LANG(?place_of_birth) = "en")
+			?place wdt:P1376|wdt:P17 ?country .
+			?country wdt:P31/wdt:P279* wiki:Q6256 .
+			?country rdfs:label ?country_name .
+			FILTER(LANG(?country_name) = "en")
+		}
+	}
+}

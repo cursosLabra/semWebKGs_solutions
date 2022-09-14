@@ -1,0 +1,128 @@
+@prefix : <http://example.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+:table1  :hasMeasurement  :mt11 ;
+        :hasMeasurement  :mt12 ;
+        :hasMeasurement  :mt13 ;
+        :hasMeasurement  :mt14 ;
+        dcterm:date      "2020-08-11T20:15:00"^^xsd:dateTime ;
+        dcterm:creator   :miltosSoares .
+
+:mt11   :player          :bryan_Oviedo ;
+        :wikidataItem    wd:Q325997 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  36.0 .
+
+:mt12   :player          :jonasWind ;
+        :wikidataItem    wd:Q52084298 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  35.5 .
+
+:mt13   :player          :brunoFernandes ;
+        :team            :ManchesterUnitedFC ;
+        :wikidataItem    wd:Q4979316 ;
+        :hasTemperature  36.1 .
+
+:mt14   :player          :juanMata ;
+        :wikidataItem    wd:Q168740 ;
+        :team            :ManchesterUnitedFC ;
+        :hasTemperature  37 .
+@prefix : <http://example.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+:table2  :hasMeasurement  :mt21 ;
+        :hasMeasurement  :mt22 ;
+        :hasMeasurement  :mt23 ;
+        dcterm:creator   :robertKlaus .
+
+:mt21   :player          :brunoFernandes ;
+        :wikidataItem    wd:Q4979316 ;
+        :team            :ManchesterUnitedFC ;
+        :hasTemperature  36.0 ;
+        :hasTemperature  37.5 .
+
+:mt22   :player        :cristianoRonaldo ;
+        :wikidataItem  wd:Q11571 ;
+        :team          :ManchesterUnitedFC .
+
+:mt23   :player          :jonasWind ;
+        :wikidataItem    wd:Q52084298 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  39 .
+@prefix : <http://example.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+:table3  :hasMeasurement  :mt31 ;
+        :hasMeasurement  :mt32 ;
+        :hasMeasurement  :mt33 ;
+        :hasMeasurement  :mt34 ;
+        dcterm:creator   :michaelBlur .
+
+:mt31   :player          :jensStage ;
+        :wikidataItem    wd:R5235126 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  37.0 .
+
+:mt32   :player          :zeca ;
+        :wikidataItem    wd:Q3810416 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  "Approx thirty six" .
+
+:mt33   :player          :pepBiel ;
+        :wikidataItem    wd:Q47478674 ;
+        :team            :ManchesterUnitedFC ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  38.2 .
+
+:mt34   :player          :kevinDiks ;
+        :wikidataItem    wd:Q17602824 ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  370.0 .
+@prefix : <http://example.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+:report5  :hasMeasurement  :r51 ;
+        :hasMeasurement  :r52 ;
+        dcterm:creator   :jasonSmith ;
+        dcterm:date      "2020-08-11"^^xsd:date .
+
+:r51    :player          :jadonSancho ;
+        :wikidataItem    wd:Q30148558 ;
+        :team            :ManchesterUnitedFC ;
+        :hasTemperature  35.7 .
+
+:r52    :player          :davidDeGea ;
+        :wikidataItem    wd:Q150268 ;
+        :team            :ManchesterUnitedFC ;
+        :hasTemperature  36.1 .
+@prefix : <http://example.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+:report6  :hasMeasurement  :r61 ;
+        :hasMeasurement  :r62 ;
+        dcterm:creator   :tomBray ;
+        dcterm:date      "2020-08-11"^^xsd:date .
+
+:r61    :player          :kamilGrabara ;
+        :team            :FCCopenhagen ;
+        :hasTemperature  36 ;
+        :comment         "This observation was done by the <person name='Jess Thorup'>Coach</person> and the <person name='Rubén Sellés'>Assistant coach</person>" .
+
+:r62    :player          :raphaelVarane ;
+        :team            :ManchesterUnitedFC ;
+        :hasTemperature  35.8 .

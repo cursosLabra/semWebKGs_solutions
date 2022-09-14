@@ -1,0 +1,21 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+:table2 :hasMeasurement :mt21, :mt22, :mt23;
+        dcterm:creator :robertKlaus .
+        
+:mt21 :player :brunoFernandes ;
+    :wikidataItem wd:Q4979316 ;
+    :team :ManchesterUnitedFC ;
+    :hasTemperature 36.0, 37.5 .
+:mt22 :player :cristianoRonaldo ;
+    :wikidataItem wd:Q11571 ;
+    :team :ManchesterUnitedFC .
+:mt23 :player :jonasWind ;
+    :wikidataItem wd:Q52084298 ;
+    :team :FCCopenhagen ;
+    :hasTemperature 39 .
+     

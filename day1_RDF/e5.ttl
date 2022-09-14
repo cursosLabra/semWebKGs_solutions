@@ -1,0 +1,18 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+:report5 :hasMeasurement :r51, :r52 ;
+        dcterm:creator :jasonSmith ;
+        dcterm:date "2020-08-11"^^xsd:date .
+        
+:r51 :player :jadonSancho ;
+    :wikidataItem wd:Q30148558 ;
+    :team :ManchesterUnitedFC ;
+    :hasTemperature 35.7 .
+:r52 :player :davidDeGea ;
+    :wikidataItem wd:Q150268 ;
+    :team :ManchesterUnitedFC ;
+    :hasTemperature 36.1 .

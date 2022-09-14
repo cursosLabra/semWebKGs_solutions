@@ -1,0 +1,26 @@
+@prefix ex: <http://www.example.org/> .
+@prefix voc: <http://www.example.org/voc/> .
+@prefix schema: <https://schema.org/> .
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Observation1 a schema:Observation ;
+    voc:footballPlayer "Jadon Sancho" ;
+    voc:wikidataitem wiki:Q30148558 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 35.7e0 .
+
+ex:Observation2 a schema:Observation ;
+    voc:footballPlayer "David de Gea" ;
+    voc:wikidataitem wiki:Q150268 ;
+    voc:team ex:TeamManchesterUnited ;
+    schema:measuredProperty voc:Temperature ;
+    schema:measuredValue 36.1e0 .
+
+ex:Report a schema:Report ;
+    schema:agent "Jason Smith" ;
+    schema:date "2020-08-11"^^xsd:date ;
+    schema:item ex:Observation1 , ex:Observation2 .
+
+# https://rdfshape.weso.es/link/16382365033

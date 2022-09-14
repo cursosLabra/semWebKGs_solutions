@@ -1,0 +1,24 @@
+@prefix ex: <http://www.example.org/> .
+@prefix bkos: <http://pid.bayer.com/bkos/> .
+@prefix csd: <http://pid.bayer.com/kos/k0000062/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix ilo: <http://pid.bayer.com/kos/k0000001/> .
+@prefix eda: <http://edamontology.org/data> .
+
+ex:Measurement1 a eda:_3108 ; # experimental measurement
+    csd:hasRelationTo ex:OviedoCity ;
+    qudt:numericValue 36.0e0 ;
+    qudt:unit unit:DEG_C .
+
+ex:OviedoCity a ilo:e0000027 . # City
+
+ex:Measurement2 a eda:_3108 ; # experimental measurement
+    csd:hasRelationTo ex:OviedoPerson ;
+    qudt:numericValue 36.0e0 ;
+    qudt:unit unit:DEG_C .
+
+ex:OviedoPerson a bkos:SoccerPlayer .
+
+# https://rdfshape.weso.es/link/16382603619
+

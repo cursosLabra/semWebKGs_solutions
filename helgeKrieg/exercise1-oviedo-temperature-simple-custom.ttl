@@ -1,0 +1,11 @@
+@prefix voc: <http://www.bayer.com/voc/> .
+@prefix ex: <http://www.example.org/> .
+
+ex:OviedoCity a voc:City ;
+    voc:weatherTemperature 36.0e0 .
+
+ex:OviedoPerson a voc:SoccerPlayer ;
+    voc:bodyTemperature 36.0e0 .
+
+# https://rdfshape.weso.es/link/16382276887
+

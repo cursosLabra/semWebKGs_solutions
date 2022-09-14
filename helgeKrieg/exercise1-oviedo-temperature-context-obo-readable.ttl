@@ -1,0 +1,38 @@
+@prefix ex: <http://www.example.org/> .
+@prefix ncit: <http://purl.obolibrary.org/obo/NCIT> .
+@prefix ro: <http://purl.obolibrary.org/obo/RO> .
+@prefix pato: <http://purl.obolibrary.org/obo/PATO> .
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO> .
+@prefix af-p: <http://purl.allotrope.org/ontologies/process#> .
+@prefix af-r: <http://purl.allotrope.org/ontologies/result#> .
+@prefix af-e: <http://purl.allotrope.org/ontologies/equipment#> .
+@prefix af-x: <http://purl.allotrope.org/ontologies/property#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+ex:TemperatureMeasurement a af-p:TemperatureMeasurement ;
+    ro:hasPArticipant ex:Result , ex:Thermometer  ;
+    af-x:triggers _:LocalTemperature .
+
+ex:Result a af-r:TemperatureMeasurementResult ;
+    qudt:numericValue 36.0e0 ;
+    qudt:unit unit:DEG_C .
+
+ex:Thermometer a af-e:Thermometer ;
+    ro:locatedIn ex:PlazaEspana .
+
+ex:PlazaEspana a bfo:Site ;
+    ro:locatedIn ex:OviedoCity ;
+    ro:hasQuality _:LocalTemperature .
+
+ex:OviedoCity a ncit:City .
+
+_:LocalTemperature a pato:Temperature .
+
+ex:PlazaEspanaLocation a geo:Point, af-r:Geolocation ;
+    af-x:describes ex:PlazaEspana ;
+    geo:lat 43.361 ;
+    geo:long -5.853 .
+
+# https://rdfshape.weso.es/link/16382550288

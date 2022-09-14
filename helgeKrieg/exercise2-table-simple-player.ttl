@@ -1,0 +1,33 @@
+@prefix ex: <http://www.example.org/> .
+@prefix voc: <http://www.example.org/voc/> .
+@prefix schema: <https://schema.org/> .
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ex:BryanOviedo a voc:FootballPlayer ;
+    foaf:name "Bryan Oviedo" ;
+    skos:related wiki:Q325997 ;
+    schema:memberOf ex:TeamCopenhagen ;
+    voc:bodyTemperature 36.0e0 .
+
+ex:JonasWind a voc:FootballPlayer ;
+    foaf:name "Jonas Wind" ;
+    skos:related wiki:Q52084298 ;
+    schema:memberOf ex:TeamCopenhagen ;
+    voc:bodyTemperature 35.5e0 .
+
+ex:BrunoFernandes a voc:FootballPlayer ;
+    foaf:name "Bruno Fernandes" ;
+    skos:related wiki:Q4979316 ;
+    schema:memberOf ex:TeamManchesterUnited ;
+    voc:bodyTemperature 36.1e0 .
+
+ex:JuanMata a voc:FootballPlayer ;
+    foaf:name "Juan Mata" ;
+    skos:related wiki:Q168740 ;
+    schema:memberOf ex:TeamManchesterUnited ;
+    voc:bodyTemperature 37.0e0 .
+
+#https://rdfshape.weso.es/link/16382313622

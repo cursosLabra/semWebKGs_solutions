@@ -1,0 +1,13 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+select ?p ?team1 ?team2 where {
+ ?x :player ?p ;
+    :team ?team1 .
+ ?y :player ?p ;
+     :team ?team2 . 
+ filter (?team1 != ?team2)    
+}

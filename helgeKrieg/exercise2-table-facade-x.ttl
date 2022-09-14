@@ -1,0 +1,27 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+[ rdf:_1  [ rdf:_1  "Bryan Oviedo" ;
+			rdf:_2  "Q325997" ;
+			rdf:_3  "F. C. Copenhagen" ;
+			rdf:_4  "36"
+		  ] ;
+  rdf:_2  [ rdf:_1  "Jonas Wind" ;
+			rdf:_2  "Q52084298" ;
+			rdf:_3  "F. C. Copenhagen" ;
+			rdf:_4  "35.5"
+		  ] ;
+  rdf:_3  [ rdf:_1  "Bruno Fernandes" ;
+			rdf:_2  "Q4979316" ;
+			rdf:_3  "Manchester United F. C." ;
+			rdf:_4  "36.1"
+		  ] ;
+  rdf:_4  [ rdf:_1  "Juan Mata" ;
+			rdf:_2  "Q168740" ;
+			rdf:_3  "Manchester United F. C." ;
+			rdf:_4  "37"
+		  ]
+] .
+
+# https://rdfshape.weso.es/link/16382341393
+
+# Facade-X https://github.com/SPARQL-Anything/sparql.anything

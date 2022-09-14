@@ -1,0 +1,24 @@
+@prefix voc: <http://www.bayer.com/voc/> .
+@prefix ex: <http://www.example.org/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:Observation1 a voc:Observation ;
+    voc:linksTo ex:OviedoCity ;
+    voc:linksTo ex:Result1 .
+
+ex:Result1 a voc:Result ;
+    rdf:value 36.0e0 .
+
+ex:OviedoCity a voc:City .
+
+ex:Observation2 a voc:Observation ;
+    voc:linksTo ex:OviedoPerson ;
+    voc:linksTo ex:Result2 .
+
+ex:Result2 a voc:Result ;
+    rdf:value 36.0e0 .
+
+ex:OviedoPerson a voc:SoccerPlayer .
+
+# https://rdfshape.weso.es/link/16382572972
+

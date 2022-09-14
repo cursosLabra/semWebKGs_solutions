@@ -1,0 +1,26 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+:table1 :hasMeasurement :mt11, :mt12, :mt13, :mt14 ;
+        dcterm:date "2020-08-11T20:15:00"^^xsd:dateTime ;
+        dcterm:creator :miltosSoares .
+        
+:mt11 :player :bryan_Oviedo ;
+    :wikidataItem wd:Q325997 ;
+    :team :FCCopenhagen ;
+    :hasTemperature 36.0 .
+:mt12 :player :jonasWind ;
+    :wikidataItem wd:Q52084298 ;
+    :team :FCCopenhagen ;
+    :hasTemperature 35.5 .
+:mt13 :player :brunoFernandes ;
+     :team :ManchesterUnitedFC ;
+    :wikidataItem wd:Q4979316 ;
+    :hasTemperature 36.1 .
+:mt14 :player :juanMata ;
+    :wikidataItem wd:Q168740 ;
+    :team :ManchesterUnitedFC ;
+    :hasTemperature 37 .

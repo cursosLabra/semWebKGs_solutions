@@ -1,0 +1,17 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+:report6 :hasMeasurement :r61, :r62 ;
+        dcterm:creator :tomBray ;
+        dcterm:date "2020-08-11"^^xsd:date .
+        
+:r61 :player :kamilGrabara ;
+    :team :FCCopenhagen ;
+    :hasTemperature 36 ;
+    :comment "This observation was done by the <person name='Jess Thorup'>Coach</person> and the <person name='Rubén Sellés'>Assistant coach</person>".
+:r62 :player :raphaelVarane ;
+    :team :ManchesterUnitedFC ;
+    :hasTemperature 35.8 .

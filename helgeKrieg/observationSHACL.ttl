@@ -1,0 +1,43 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:     <http://www.example.org/> .
+@prefix :       <http://www.example.org/> .
+@prefix voc:    <http://www.example.org/voc/> .
+@prefix schema: <https://schema.org/> .
+@prefix wiki:   <https://www.wikidata.org/wiki/> .
+        
+:Observation a sh:NodeShape;
+   sh:targetClass schema:Observation ;
+   sh:property [ 
+    sh:path     voc:footballPlayer ; 
+    sh:minCount 1; 
+    sh:maxCount 1;
+    sh:datatype xsd:string ;
+  ] ;
+   sh:property [ 
+    sh:path     voc:wikidataitem ; 
+    sh:minCount 1; 
+    sh:maxCount 1;
+    sh:nodeKind sh:IRI ;
+  ] ;
+   sh:property [ 
+    sh:path     voc:team ; 
+    sh:minCount 1; 
+    sh:maxCount 2;
+  ] ;
+   sh:property [ 
+    sh:path     schema:measuredProperty ; 
+    sh:minCount 1; 
+    sh:maxCount 1;
+    sh:hasValue voc:Temperature
+  ] ;
+   sh:property [ 
+    sh:path     schema:measuredValue ; 
+    sh:minCount 1; 
+    sh:maxCount 1;
+    sh:datatype xsd:double ;
+    sh:maxInclusive 45 ;
+  ] 
+ .

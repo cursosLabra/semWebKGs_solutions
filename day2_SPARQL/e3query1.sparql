@@ -1,0 +1,25 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+select ?p ?item ?label ?birthPlaceLabel ?countryLabel where {
+ ?x :player ?p ;
+    :wikidataItem ?item
+ { SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> { 
+     ?item rdfs:label ?label .
+     ?item wdt:P19 ?birthPlace .
+     ?birthPlace rdfs:label ?birthPlaceLabel .
+     ?birthPlace wdt:P17 ?country .
+     ?country rdfs:label ?countryLabel .
+     filter (
+        lang(?label) = 'en' &&
+        lang(?countryLabel) = 'en' && 
+        lang(?birthPlaceLabel) = 'en'
+     )
+ }
+ }
+}

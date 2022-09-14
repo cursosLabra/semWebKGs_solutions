@@ -1,0 +1,21 @@
+prefix :    <http://example.org/>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix dcterm: <http://purl.org/dc/terms/>
+
+<Table> {
+    :hasMeasurement @<Measurement>* ;
+    dcterm:date xsd:dateTime OR xsd:date ? ;
+    dcterm:creator . 
+}
+
+<Measurement> {
+    :player @<Player> ;
+    :wikidataItem /http:\/\/www.wikidata.org\/entity\/Q[0-9]+/ ;
+    :team @<Team> ;
+    :hasTemperature xsd:decimal OR xsd:integer ?
+}
+
+<Player> {}
+<Team> {}
